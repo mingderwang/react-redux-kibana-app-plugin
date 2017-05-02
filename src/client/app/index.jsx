@@ -4,14 +4,21 @@ import Web3 from 'web3'
 import { createStore } from 'redux'
 import expect from 'expect'
 
+/*
+ * action types
+ */
+
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+
 const counter = (state = 0, action) => {
   switch (action.type) {
-    case 'INCREMENT':
+    case INCREMENT:
       return state + 1
-    case 'DECREMENT':
+    case DECREMENT:
       return state - 1
     default:
-      return state;
+      return state
   }
 }
 
@@ -35,12 +42,12 @@ const render = _ => {
       value={store.getState()}
       onIncrement = { _ =>
                     store.dispatch({
-                     type: 'INCREMENT'
+                     type: INCREMENT
                     })
 }
       onDecrement = { _ =>
                     store.dispatch({
-                     type: 'DECREMENT'
+                     type: DECREMENT
                     })
       }
       />,
@@ -52,11 +59,11 @@ store.subscribe(render)
 render()
 
 expect(
-  counter(0, { type: 'INCREMENT'})
+  counter(0, { type: INCREMENT})
 ).toEqual(1);
 
 expect(
-  counter(1, { type: 'DECREMENT'})
+  counter(1, { type: DECREMENT})
 ).toEqual(0);
 
 console.log('Tests Passed!')

@@ -2,23 +2,61 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Web3 from 'web3'
 import { createStore } from 'redux'
+import expect from 'expect'
 
-// define actions here.
-function todos(state = [], action) {
+const counter = (state = 0, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return state.concat([ action.text ])
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
     default:
-      return state
+      return state;
   }
 }
 
-// create store and init state
-let store = createStore(todos, ["aa ", "asdbb df"])
+const Counter = ({
+  value,
+  onIncrement,
+  onDecrement
+}) => (
+  <div>
+    <h1>{value}</h1>
+    <button onClick={onIncrement}>+</button>
+    <button onClick={onDecrement}>-</button>
+  </div>
+)
 
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Read the docs'
-})
+const store = createStore(counter)
 
-console.log(store.getState())
+const render = _ => {
+  ReactDOM.render(
+    <Counter
+      value={store.getState()}
+      onIncrement = { _ =>
+                    store.dispatch({
+                     type: 'INCREMENT'
+                    })
+}
+      onDecrement = { _ =>
+                    store.dispatch({
+                     type: 'DECREMENT'
+                    })
+      }
+      />,
+    document.getElementById('app')
+  )
+}
+
+store.subscribe(render)
+render()
+
+expect(
+  counter(0, { type: 'INCREMENT'})
+).toEqual(1);
+
+expect(
+  counter(1, { type: 'DECREMENT'})
+).toEqual(0);
+
+console.log('Tests Passed!')

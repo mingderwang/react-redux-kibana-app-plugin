@@ -3,48 +3,9 @@ import ReactDOM from 'react-dom'
 import Web3 from 'web3'
 import { createStore } from 'redux'
 import expect from 'expect'
-
-/*
- * action types
- */
-
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
-
-/*
- * action creators
- */
-
-export function increment() {
-  return { type: INCREMENT }
-}
-
-export function decrement() {
-  return { type: DECREMENT }
-}
-
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case INCREMENT:
-      return state + 1
-    case DECREMENT:
-      return state - 1
-    default:
-      return state
-  }
-}
-
-const Counter = ({
-  value,
-  onIncrement,
-  onDecrement
-}) => (
-  <div>
-    <h1>{value}</h1>
-    <button onClick={onIncrement}>+</button>
-    <button onClick={onDecrement}>-</button>
-  </div>
-)
+import { increment, decrement, INCREMENT, DECREMENT } from './actions/counter_action'
+import { Counter } from './components/counter_component.jsx'
+import { counter } from './reducers/counter_reducer'
 
 const store = createStore(counter)
 
@@ -54,7 +15,7 @@ const render = _ => {
       value={store.getState()}
       onIncrement = { _ =>
                     store.dispatch(increment())
-}
+      }
       onDecrement = { _ =>
                     store.dispatch(decrement())
       }
@@ -67,11 +28,11 @@ store.subscribe(render)
 render()
 
 expect(
-  counter(0, { type: INCREMENT})
+  counter(0, increment())
 ).toEqual(1);
 
 expect(
-  counter(1, { type: DECREMENT})
+  counter(1, decrement())
 ).toEqual(0);
 
 console.log('Tests Passed!')

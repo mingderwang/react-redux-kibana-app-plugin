@@ -5,7 +5,9 @@ var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
-  entry: APP_DIR + '/index.jsx',
+  entry: {
+    bundle1:[ APP_DIR + '/index.jsx',  APP_DIR + '/components/counter_component.jsx']
+  },
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'

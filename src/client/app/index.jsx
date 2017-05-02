@@ -11,6 +11,18 @@ import expect from 'expect'
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
+/*
+ * action creators
+ */
+
+export function increment() {
+  return { type: INCREMENT }
+}
+
+export function decrement() {
+  return { type: DECREMENT }
+}
+
 const counter = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
@@ -41,14 +53,10 @@ const render = _ => {
     <Counter
       value={store.getState()}
       onIncrement = { _ =>
-                    store.dispatch({
-                     type: INCREMENT
-                    })
+                    store.dispatch(increment())
 }
       onDecrement = { _ =>
-                    store.dispatch({
-                     type: DECREMENT
-                    })
+                    store.dispatch(decrement())
       }
       />,
     document.getElementById('app')

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Web3 from 'web3'
 import { createStore } from 'redux'
 
+// define actions here.
 function todos(state = [], action) {
   switch (action.type) {
     case 'ADD_TODO':
@@ -12,7 +13,8 @@ function todos(state = [], action) {
   }
 }
 
-let store = createStore(todos, [ 'UX Redux' ])
+// create store and init state
+let store = createStore(todos, ["aa ", "asdbb df"])
 
 store.dispatch({
   type: 'ADD_TODO',

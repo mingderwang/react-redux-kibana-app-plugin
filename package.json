@@ -1,0 +1,25 @@
+{
+  "name": "react-hello-world",
+  "version": "1.0.0",
+  "description": "react + redux + web3.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd src/client && http-server",
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "author": "Ming-der Wang <mingderwang@gmail.com>",
+  "license": "MIT",
+  "devDpendencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "http-server": "^0.9.0",
+    "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "web3": "^0.18.4"
+  }
+}

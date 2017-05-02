@@ -1,16 +1,22 @@
-import React from 'react';
-import {render} from 'react-dom';
-import AwesomeComponent from './AwesomeComponent.jsx';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Web3 from 'web3'
+import { createStore } from 'redux'
 
-class App extends React.Component {
-  render () {
-    return (
-      <div>
-        <p> Hello React!</p>
-        <AwesomeComponent />
-      </div>
-    );
+function todos(state = [], action) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return state.concat([ action.text ])
+    default:
+      return state
   }
 }
 
-render(<App/>, document.getElementById('app'));
+let store = createStore(todos, [ 'UX Redux' ])
+
+store.dispatch({
+  type: 'ADD_TODO',
+  text: 'Read the docs'
+})
+
+console.log(store.getState())

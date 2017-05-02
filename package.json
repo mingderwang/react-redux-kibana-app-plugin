@@ -8,6 +8,10 @@
     "dev": "webpack -d --watch",
     "build": "webpack -p"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingderwang/react-hello-world.git"
+  },
   "author": "Ming-der Wang <mingderwang@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -20,6 +24,8 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "web3": "^0.18.4"
+    "web3": "^0.18.4",
+    "react-redux": "^5.0.2",
+    "redux": "^3.5.2"
   }
 }

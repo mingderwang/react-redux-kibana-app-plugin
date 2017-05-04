@@ -1,9 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
 import { addFunction } from '../actions/add_action'
 import Adder from './add_component.jsx'
-import { Provider, connect } from 'react-redux'
+import { connect } from 'react-redux'
 
 /*
  * 對應 Redux 的 state 到 component 的 props

@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { default as Counter } from '../components/counter_helper'
-import { default as Adder } from '../components/add_helper'
+import Counter from '../components/counter_mapping'
+import Adder from '../components/add_mapping'
+
 const App = () => {
   return (
       <div className="container">

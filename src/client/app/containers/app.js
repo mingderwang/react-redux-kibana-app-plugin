@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { default as Counter } from '../components/Counter'
-const App = ({ children }) => {
-  return (
-     <h1>ming</h1>
-  );
-};
+import { default as Counter } from '../components/counter_helper'
 
-App.propTypes = {
-  children: PropTypes.node.isRequired
+const App = () => {
+  return (
+      <div className="container">
+        <Counter/>
+      </div>
+  );
 };
 
 export default App;

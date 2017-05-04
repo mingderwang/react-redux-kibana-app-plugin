@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
-import { increment, decrement } from '../actions/counter_action'
-import Counter from './counter_component.jsx'
+import { addFunction } from '../actions/add_action'
+import Adder from './add_component.jsx'
 import { Provider, connect } from 'react-redux'
 
 /*
@@ -11,7 +11,7 @@ import { Provider, connect } from 'react-redux'
 
 const mapStateToProps = (...args) => { // can replace ...args with state
   return {
-    counter_state: args[0].counter_state
+    counter_state: args[0].add_state
   };
 };
 
@@ -20,12 +20,11 @@ const mapStateToProps = (...args) => { // can replace ...args with state
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    onIncrement: () => dispatch(increment()),
-    onDecrement: () => dispatch(decrement())
+    onAddFunction: () => dispatch(addFunction())
   };
 };
 
 export default connect(
  mapStateToProps,
  mapDispatchToProps
-)(Counter);
+)(Adder);

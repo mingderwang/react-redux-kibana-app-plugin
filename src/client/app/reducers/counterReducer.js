@@ -26,4 +26,4 @@ expect(
   counter(1, decrement())
 ).toEqual(0);
 
-console.log('Tests Passed!')
+console.log('counterReducer - Tests Passed!')

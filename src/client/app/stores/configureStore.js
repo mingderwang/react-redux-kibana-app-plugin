@@ -21,8 +21,13 @@ const storeEnhancers = [];
   storeEnhancers.push(DevTools.instrument());
 //}
 
+const initialData = {
+  counter_state : initialState,
+  add_state : 0
+}
+
 const combinedCreateStore = compose(...storeEnhancers)(createStore);
-const store = combinedCreateStore(rootReducer, initialState);
+const store = combinedCreateStore(rootReducer, initialData); // can add initialState in 2nd par.
 
 export default function configureStore() {
   return store;

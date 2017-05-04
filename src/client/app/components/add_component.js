@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { addFunction } from '../actions/add_action'
 import { connect } from 'react-redux'
 
-const Adder = React.createClass({
+class Adder extends Component { // ES6
+// const Adder = React.createClass({ // ES5
 render() {
   const { add_state, onAddFunction } = this.props
   return (
@@ -13,7 +14,8 @@ render() {
   </div>
   );
   }
-});
+// }); // ES5
+} // ES6
 
 Adder.propTypes = {
   add_state: PropTypes.number.isRequired,

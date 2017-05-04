@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types';
 
-const Counter = React.createClass({
+class Counter extends Component { // ES6
+//const Counter = React.createClass({ // ES5
 render() {
   const { counter_state, onIncrement, onDecrement } = this.props
   return (
@@ -12,7 +13,8 @@ render() {
   </div>
   );
   }
-});
+// }); // ES5
+} // ES6
 
 Counter.propTypes = {
   counter_state: PropTypes.number.isRequired,

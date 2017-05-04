@@ -1,6 +1,6 @@
 import React from 'react'
 import { addFunction } from '../actions/add_action'
-import Adder from './add_component.jsx'
+import Adder from './add_component'
 import { connect } from 'react-redux'
 
 /*

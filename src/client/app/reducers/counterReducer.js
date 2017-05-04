@@ -3,7 +3,7 @@ import expect from 'expect'
 /*
  * reducers
  */
-export const initialState = 7
+const initialState = 7
 
 let counter = (state = initialState ,action) => {
   switch (action.type) {

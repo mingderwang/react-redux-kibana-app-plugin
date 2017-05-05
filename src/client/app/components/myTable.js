@@ -28,8 +28,10 @@ const MyTable = (props) => {
 		<div>
 			<h1>React-Table - Basic Example</h1>
 			<ReactTable
+      className='-striped -highlight'
 				data={makeData()}
 				columns={columns}
+        defaultPageSize={10}
 			/>
 			<br />
 			<br />

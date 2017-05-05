@@ -1,2 +1,8 @@
 node_modules
 src/client/public/bundle.js
+.DS_Store
+src/.DS_Store
+src/client/.DS_Store
+src/client/app/.DS_Store
+src/client/app/actions/.DS_Store
+src/client/app/components/.DS_Store

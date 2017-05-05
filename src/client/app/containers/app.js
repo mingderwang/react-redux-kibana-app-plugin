@@ -4,6 +4,7 @@ import Counter from '../components/counter_mapping'
 import Adder from '../components/add_mapping'
 import { createStore, compose, applyMiddleware } from 'redux';
 import DevTools from '../utils/DevTools'
+import Gmap from '../components/map'
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
         <Counter/>
         <Adder/>
         <DevTools/>
+        <Gmap/>
       </div>
   );
 };

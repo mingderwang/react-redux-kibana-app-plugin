@@ -2,7 +2,7 @@ import React from 'react'
 import Counter from '../components/counter_mapping'
 import Adder from '../components/add_mapping'
 import DevTools from '../utils/DevTools'
-import MyTable from '../components/MyTable'
+import Gmap from '../components/map'
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
         <Counter/>
         <Adder/>
         <DevTools/>
+        <Gmap/>
       </div>
   );
 };

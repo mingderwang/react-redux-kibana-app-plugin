@@ -55,13 +55,6 @@ const babelLoader = {
   }
 }
 
-const lintLoader = {
-  test: /\.jsx?$/,
-  exclude: /node_modules/,
-  enforce: 'pre',
-  loader: 'eslint-loader'
-}
-
 var config = {
   entry: {
     bundle1:[ APP_DIR + '/index.jsx']
@@ -76,8 +69,7 @@ var config = {
   module: {
   rules: [
     ...assetsLoaders,
-    babelLoader,
-    lintLoader
+    babelLoader
   ]
 },
 };

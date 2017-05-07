@@ -7,9 +7,9 @@ import { connect } from 'react-redux'
  * 對應 Redux 的 state 到 component 的 props
  */
 
-const mapStateToProps = (...args) => { // can replace ...args with state
+const mapStateToProps = (state) => {
   return {
-    counter_state: args[0].counter_state
+    counter_state: state.counter_state
   };
 };
 

@@ -7,7 +7,6 @@ import Gmap from '../components/map'
 const App = () => {
   return (
       <div className="container">
-        <MyTable/>
         <Counter/>
         <Adder/>
         <DevTools/>
